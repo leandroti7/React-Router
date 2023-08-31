@@ -1,6 +1,7 @@
 import { Form, useLoaderData, redirect } from "react-router-dom";
 import { updateContact } from "../contacts";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function action({ request, params }) {
   const formData = await request.formData();
   const updates = Object.fromEntries(formData);
