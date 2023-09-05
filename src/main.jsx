@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import Index from "./routes/index";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root, {
   loader as rootLoader,
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     loader: rootLoader,
     action: rootAction,
     children: [
+      { index: true, element: <Index /> },
       {
         path: "contacts/:contactId",
         element: <Contact />,
@@ -33,6 +35,7 @@ const router = createBrowserRouter([
       {
         path: "contacts/:contactId/destroy",
         action: destroyAction,
+        errorElement: <div>Oooops! There was an error.</div>,
       },
     ],
   },
